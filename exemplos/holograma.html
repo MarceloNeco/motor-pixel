@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Motor Pixel — holograma</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<canvas class="cena" id="cena" aria-label="Boneco em holograma azul"></canvas>
+<div class="info">holograma: corpo translúcido com brilho, partes acesas em branco.</div>
+<div class="barra"><button id="trocar">✨ Trocar parte acesa</button></div>
+<script type="module">
+import { Motor } from '../1.0/motor.js';
+const { holograma, personagens3d, nucleo } = await Motor.usar('holograma', 'personagens3d', 'nucleo');
+const h = holograma.criarCenaHolograma(document.getElementById('cena'));
+const boneco = await personagens3d.criarPersonagem(null, 'modelos/boneco.glb', h.scene);
+h.camera.lookAt(0, 1, 0);
+const partes = ['tronco', 'braco_dir', 'perna_esq'];
+let i = 0;
+holograma.vestirHolograma(boneco.raiz, [partes[i]]);
+document.getElementById('trocar').onclick = () => { i = (i + 1) % partes.length; holograma.vestirHolograma(boneco.raiz, [partes[i]]); };
+nucleo.aCadaQuadro((dt) => { boneco.raiz.rotation.y += dt * 0.4; h.composer.render(); });
+window.__exemplo = { h, boneco };
+</script>
+</body>
+</html>

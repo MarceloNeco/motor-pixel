@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exemplo — Personagem 2D em camadas (PixiJS)</title>
+  <style>
+    html, body { margin: 0; height: 100%; background: #FFF6EE; overflow: hidden; font-family: system-ui; }
+    #cores { position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px;
+             background: #fff; padding: 10px 14px; border-radius: 20px; box-shadow: 0 6px 20px #3D235226; }
+    #cores button { width: 36px; height: 36px; border-radius: 50%; border: 3px solid #fff; cursor: pointer;
+                    box-shadow: 0 0 0 2px #3D235233; }
+  </style>
+</head>
+<body>
+  <div id="cores" aria-label="Cor do vestido"></div>
+  <script type="module">
+    /* Exemplo de referência. Requer ../libs/pixi.min.mjs e as imagens em ./arte/
+       (todas na MESMA pose e no MESMO tamanho de tela, fundo transparente). */
+    import { Application, Assets, Sprite, Container, Graphics } from '../../1.0/libs/pixi.min.mjs';
+
+    const app = new Application();
+    await app.init({ resizeTo: window, background: '#FFF6EE', antialias: true });
+    document.body.prepend(app.canvas);
+
+    const arte = await Assets.load([
+      'arte/cenario-salao.webp',
+      'arte/cabelo-tras.webp', 'arte/corpo.webp', 'arte/rosto.webp',
+      'arte/vestido-cinza.webp', 'arte/cabelo-frente.webp',
+    ]);
+
+    // 1) Cenário pintado ocupando a tela
+    const cenario = new Sprite(arte['arte/cenario-salao.webp']);
+    app.stage.addChild(cenario);
+
+    // 2) Personagem em camadas, na ordem de trás para frente
+    const personagem = new Container();
+    const camadas = {};
+    for (const nome of ['cabelo-tras', 'corpo', 'rosto', 'vestido-cinza', 'cabelo-frente']) {
+      camadas[nome] = new Sprite(arte[`arte/${nome}.webp`]);
+      personagem.addChild(camadas[nome]);
+    }
+    app.stage.addChild(personagem);
+
+    // 3) Recolorir: a peça é cinza, o tint multiplica pela cor escolhida
+    const cores = ['#FF7AB6', '#A88BE0', '#6FD8BF', '#F6C453', '#7EB6FF', '#FFFFFF'];
+    const barra = document.getElementById('cores');
+    for (const cor of cores) {
+      const b = document.createElement('button');
+      b.style.background = cor;
+      b.setAttribute('aria-label', cor);
+      b.onclick = () => { camadas['vestido-cinza'].tint = cor; brilhos(); pulinho(); };
+      barra.append(b);
+    }
+
+    // 4) "Respirar" parada e pulinho ao vestir
+    let pulo = 0;
+    function pulinho() { pulo = 0.15; }
+    app.ticker.add((t) => {
+      const s = 1 + Math.sin(performance.now() / 900) * 0.006 + (pulo > 0 ? Math.sin((0.15 - pulo) / 0.15 * Math.PI) * 0.03 : 0);
+      personagem.scale.set(s * escala);
+      pulo = Math.max(0, pulo - t.deltaMS / 1000);
+    });
+
+    // 5) Brilhos dourados (partículas simples)
+    function brilhos() {
+      for (let i = 0; i < 6; i++) {
+        const p = new Graphics().star(0, 0, 5, 10, 4).fill('#F6C453');
+        p.x = personagem.x + (Math.random() - 0.5) * personagem.width * 0.6;
+        p.y = personagem.y + personagem.height * (0.3 + Math.random() * 0.4);
+        app.stage.addChild(p);
+        let vida = 0.8;
+        const anda = (t) => {
+          vida -= t.deltaMS / 1000;
+          p.y -= 1.2; p.alpha = Math.max(0, vida / 0.8); p.rotation += 0.1;
+          if (vida <= 0) { app.ticker.remove(anda); p.destroy(); }
+        };
+        app.ticker.add(anda);
+      }
+    }
+
+    // 6) Encaixar na tela (cenário cobre; personagem centralizado, 85% da altura)
+    let escala = 1;
+    function ajustar() {
+      const W = app.screen.width, H = app.screen.height;
+      const sc = Math.max(W / cenario.texture.width, H / cenario.texture.height);
+      cenario.scale.set(sc);
+      cenario.position.set((W - cenario.width) / 2, (H - cenario.height) / 2);
+      escala = (H * 0.85) / camadas.corpo.texture.height;
+      personagem.pivot.set(camadas.corpo.texture.width / 2, camadas.corpo.texture.height);
+      personagem.position.set(W / 2, H * 0.95);
+    }
+    addEventListener('resize', ajustar);
+    ajustar();
+  </script>
+</body>
+</html>

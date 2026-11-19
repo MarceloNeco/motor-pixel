@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exemplo — Rosto vivo com Rive</title>
+  <!-- Arquivo único do tocador Rive (@rive-app/canvas-single) copiado para o repositório -->
+  <script src="../../1.0/libs/rive.js"></script>
+  <style>
+    body { margin: 0; background: #FFF6EE; display: grid; place-items: center; height: 100vh; font-family: system-ui; }
+    canvas { width: 320px; height: 320px; }
+    .botoes { display: flex; gap: 8px; margin-top: 12px; }
+    button { font: 700 16px system-ui; padding: 10px 16px; border-radius: 16px; border: 0; background: #FF7AB6; color: #fff; }
+  </style>
+</head>
+<body>
+  <div>
+    <canvas id="rosto" width="640" height="640"></canvas>
+    <div class="botoes">
+      <button id="feliz">😊</button>
+      <button id="surpresa">😮</button>
+    </div>
+  </div>
+  <script>
+    /* Exemplo de referência. Supõe um arquivo rosto.riv com a máquina de estados "Rosto"
+       e as entradas "feliz" (boolean) e "surpresa" (trigger), criadas no editor do Rive. */
+    const r = new rive.Rive({
+      src: 'arte/rosto.riv',
+      canvas: document.getElementById('rosto'),
+      autoplay: true,
+      stateMachines: 'Rosto',
+      onLoad: () => {
+        r.resizeDrawingSurfaceToCanvas();
+        const entradas = r.stateMachineInputs('Rosto');
+        const feliz = entradas.find((i) => i.name === 'feliz');
+        const surpresa = entradas.find((i) => i.name === 'surpresa');
+        document.getElementById('feliz').onclick = () => { feliz.value = !feliz.value; };
+        document.getElementById('surpresa').onclick = () => surpresa.fire();
+      },
+    });
+  </script>
+</body>
+</html>

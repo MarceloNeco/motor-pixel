@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><title>Gerar o boneco de exemplo (.glb)</title></head>
+<body>
+<p>Gera <code>exemplos/modelos/boneco.glb</code>: um boneco simples feito só de formas, com partes nomeadas
+(cabeca, tronco, braco_esq, braco_dir, perna_esq, perna_dir), as animações "parado" e "comemorar" e as
+expressões "feliz" e "piscar". Feito aqui, livre para qualquer uso (CC0). Rode: <code>node ferramentas/gerar-boneco.js</code>.</p>
+<script type="module">
+import * as THREE from '../1.0/libs/three.module.js';
+import { GLTFExporter } from './libs/GLTFExporter.js';
+
+const pele = new THREE.MeshStandardMaterial({ color: '#F2C7A5', roughness: 0.7 });
+const roupa = new THREE.MeshStandardMaterial({ color: '#5B7CFA', roughness: 0.6 });
+const calca = new THREE.MeshStandardMaterial({ color: '#3D2352', roughness: 0.8 });
+
+const raiz = new THREE.Group(); raiz.name = 'boneco';
+function parte(nome, geo, mat, x, y, z) { const m = new THREE.Mesh(geo, mat); m.name = nome; m.position.set(x, y, z); return m; }
+
+// cabeça com duas expressões (morph targets): "feliz" (bochechas sobem) e "piscar" (achata em cima)
+const geoCabeca = new THREE.SphereGeometry(0.28, 24, 16);
+const pos = geoCabeca.attributes.position, feliz = [], piscar = [];
+for (let i = 0; i < pos.count; i++) {
+  const x = pos.getX(i), y = pos.getY(i), z = pos.getZ(i);
+  feliz.push(x * 1.04, y + (y < 0 ? 0.03 : 0), z);
+  piscar.push(x, y > 0.05 ? y * 0.85 : y, z);
+}
+geoCabeca.morphAttributes.position = [new THREE.Float32BufferAttribute(feliz, 3), new THREE.Float32BufferAttribute(piscar, 3)];
+const cabeca = parte('cabeca', geoCabeca, pele, 0, 1.62, 0);
+cabeca.morphTargetDictionary = { feliz: 0, piscar: 1 }; cabeca.morphTargetInfluences = [0, 0];
+cabeca.updateMorphTargets(); cabeca.morphTargetDictionary = { feliz: 0, piscar: 1 };
+
+const tronco = parte('tronco', new THREE.CapsuleGeometry(0.26, 0.5, 6, 16), roupa, 0, 1.05, 0);
+// braços e pernas em pivôs (o ombro/quadril gira), para a animação mexer
+function membro(nome, x, y, comprimento, mat) {
+  const pivo = new THREE.Group(); pivo.name = nome + '_pivo'; pivo.position.set(x, y, 0);
+  pivo.add(parte(nome, new THREE.CapsuleGeometry(0.08, comprimento, 4, 12), mat, 0, -comprimento / 2 - 0.05, 0));
+  return pivo;
+}
+const bracoE = membro('braco_esq', -0.36, 1.32, 0.45, pele), bracoD = membro('braco_dir', 0.36, 1.32, 0.45, pele);
+const pernaE = membro('perna_esq', -0.13, 0.72, 0.5, calca), pernaD = membro('perna_dir', 0.13, 0.72, 0.5, calca);
+raiz.add(cabeca, tronco, bracoE, bracoD, pernaE, pernaD);
+
+// animações (rotação dos pivôs dos braços; respiração do tronco)
+const q = (z) => new THREE.Quaternion().setFromEuler(new THREE.Euler(0, 0, z)).toArray();
+const tempos = [0, 0.5, 1];
+const parado = new THREE.AnimationClip('parado', 1, [
+  new THREE.VectorKeyframeTrack('tronco.scale', tempos, [1, 1, 1, 1.02, 1.03, 1.02, 1, 1, 1]),
+  new THREE.QuaternionKeyframeTrack('braco_esq_pivo.quaternion', tempos, [...q(0.08), ...q(0.12), ...q(0.08)]),
+  new THREE.QuaternionKeyframeTrack('braco_dir_pivo.quaternion', tempos, [...q(-0.08), ...q(-0.12), ...q(-0.08)]),
+]);
+const comemorar = new THREE.AnimationClip('comemorar', 1, [
+  new THREE.QuaternionKeyframeTrack('braco_esq_pivo.quaternion', tempos, [...q(0.1), ...q(2.6), ...q(0.1)]),
+  new THREE.QuaternionKeyframeTrack('braco_dir_pivo.quaternion', tempos, [...q(-0.1), ...q(-2.6), ...q(-0.1)]),
+  new THREE.VectorKeyframeTrack('boneco.position', tempos, [0, 0, 0, 0, 0.25, 0, 0, 0, 0]),
+]);
+
+new GLTFExporter().parse(raiz, (glb) => {
+  const b = new Uint8Array(glb); let s = '';
+  for (let i = 0; i < b.length; i += 0x8000) s += String.fromCharCode.apply(null, b.subarray(i, i + 0x8000));
+  window.__glb = btoa(s);
+}, (erro) => { window.__erro = String(erro); }, { binary: true, animations: [parado, comemorar] });
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exemplo — exercício com Rive (vetor com ossos)</title>
+<!-- Tocador do Rive em arquivo único (@rive-app/canvas-single) copiado para o repositório -->
+<script src="../../1.0/libs/rive.js"></script>
+<style>
+  body { margin:0; background:#11141B; display:grid; place-items:center; height:100vh; color:#fff; font-family:system-ui; }
+  canvas { width:min(92vw, 520px); height:min(92vw, 520px); }
+  .botoes { display:flex; gap:8px; justify-content:center; margin-top:10px; }
+  button { background:#232A36; color:#fff; border:0; border-radius:12px; padding:10px 14px; font:600 15px system-ui; }
+</style>
+</head>
+<body>
+<div>
+  <canvas id="corpo" width="1040" height="1040"></canvas>
+  <div class="botoes"><button id="pausar">Pausar</button><button id="lento">Mais devagar</button></div>
+</div>
+<script>
+  /* Exemplo de referência. Supõe um arquivo arte/corpo.riv feito no editor do Rive com:
+     - o corpo vetorial com ossos;
+     - uma máquina de estados "Exercicio" com as entradas:
+         exercicio (número: qual animação), pausado (sim/não), velocidade (número),
+         e uma entrada por músculo para acender (ex.: peitoral = 2 principal, 1 apoio, 0 apagado). */
+  const dados = { animacao: 1, principal: ['peitoral'], secundarios: ['triceps', 'deltoide_anterior'] };
+  const r = new rive.Rive({
+    src: 'arte/corpo.riv',
+    canvas: document.getElementById('corpo'),
+    stateMachines: 'Exercicio',
+    autoplay: true,
+    onLoad: () => {
+      r.resizeDrawingSurfaceToCanvas();
+      const ent = Object.fromEntries(r.stateMachineInputs('Exercicio').map((i) => [i.name, i]));
+      ent.exercicio && (ent.exercicio.value = dados.animacao);
+      for (const m of dados.principal) ent[m] && (ent[m].value = 2);
+      for (const m of dados.secundarios) ent[m] && (ent[m].value = 1);
+      document.getElementById('pausar').onclick = () => { ent.pausado.value = !ent.pausado.value; };
+      document.getElementById('lento').onclick = () => { ent.velocidade.value = ent.velocidade.value > 0.6 ? 0.5 : 1; };
+    },
+  });
+</script>
+</body>
+</html>

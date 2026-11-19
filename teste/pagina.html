@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Teste do motor</title></head>
+<body><canvas id="c" style="width:320px;height:240px"></canvas>
+<script>
+  // página de teste: o service worker de teste entrega o motor pela gaveta compartilhada
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw-teste.js');
+</script>
+</body></html>
