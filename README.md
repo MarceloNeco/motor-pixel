@@ -2,7 +2,7 @@
 
 Biblioteca de desenho para os apps web (PWA) da SolverONE: **vetorial (SVG) e 3D (Three.js) no mesmo motor**, com módulos baixados só quando um app pede. Não pertence a nenhum app: não sabe o que é jogo, treino ou criança. Cada app é um **cliente** do motor.
 
-Versão 1.0.0 (publicada em 19/11/2026, a partir do rascunho de referência de 16/11/2026). Todos os módulos carregam e têm teste automático no navegador (`node --test teste/`); veja `MUDANCAS.md`.
+Versão 1.0.0 (publicada em 19/11/2026, a partir do rascunho de referência de 16/11/2026). Todos os módulos carregam e têm teste automático no navegador (`node --test teste/*.test.js`); veja `MUDANCAS.md`.
 
 ## Em uma frase
 
@@ -53,7 +53,7 @@ motor-pixel/  (publicado em solverone.com.br/motor-pixel/)
   docs/                como o motor funciona (leia na ordem)
   apps/                como cada app usa o motor (Bolinho de Chuva, RiseONE)
   ferramentas/         servidor local de teste e gerador do boneco de exemplo (.glb)
-  teste/               testes automáticos: node --test teste/
+  teste/               testes automáticos: node --test teste/*.test.js
   FONTES.md
 ```
 

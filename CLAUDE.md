@@ -11,5 +11,5 @@
   Toda versão: `versao` igual no `manifesto.json` e no `motor.js`, nota no `MUDANCAS.md`.
 - **Gaveta compartilhada** (regra "recursos compartilhados" da SolverONE, 16/11/2026): o motor fica uma vez só no aparelho,
   na gaveta `motor-pixel-<versão>`, para todos os apps do endereço; `offline.guardarNoAparelho` + `1.0/sw-motor.js`.
-- Testes: `node --test teste/` (Playwright com o Chromium do ambiente). Antes de publicar: prints dos exemplos em 360 px e
+- Testes: `node --test teste/*.test.js` (Playwright com o Chromium do ambiente). Antes de publicar: prints dos exemplos em 360 px e
   1920 px (`node ferramentas/prints.js`, saem em `docs/prints/`).

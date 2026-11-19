@@ -8,4 +8,4 @@
 - **Gaveta compartilhada**: `offline.guardarNoAparelho()` guarda o motor uma vez só no aparelho (gaveta `motor-pixel-<versão>`), para todos os apps do mesmo endereço, e só marca um módulo como guardado quando todos os arquivos dele chegaram inteiros; `1.0/sw-motor.js` entrega esses arquivos no service worker de cada app, com ou sem internet.
 - `personagens3d.criarPersonagem(null, url, cena)` já usa o leitor de .glb do motor; `lista()` mostra as animações e expressões do modelo.
 - Exemplos novos em `/exemplos/`: cena 3D com personagem, partes 3D que acendem (realce3d) e holograma, com um boneco .glb livre (CC0) feito por `ferramentas/gerar-boneco.js`.
-- Testes em `teste/` (`node --test teste/`).
+- Testes em `teste/` (`node --test teste/*.test.js`).
