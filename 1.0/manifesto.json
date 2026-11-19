@@ -1,0 +1,27 @@
+{
+  "motor": "Motor Pixel",
+  "versao": "1.0.0",
+  "modulos": {
+    "nucleo":        { "arquivo": "modulos/nucleo/index.js",        "tipo": "comum",    "pesoMaxKB": 15, "depende": [] },
+    "efeitos":       { "arquivo": "modulos/efeitos/index.js",       "tipo": "comum",    "pesoMaxKB": 10, "depende": ["nucleo"] },
+    "offline":       { "arquivo": "modulos/offline/index.js",       "tipo": "comum",    "pesoMaxKB": 10, "depende": ["nucleo"] },
+    "vetor":         { "arquivo": "modulos/vetor/index.js",         "tipo": "vetorial", "pesoMaxKB": 15, "depende": ["nucleo"] },
+    "zoom":          { "arquivo": "modulos/zoom/index.js",          "tipo": "vetorial", "pesoMaxKB": 10, "depende": ["nucleo"] },
+    "cena3d":        { "arquivo": "modulos/cena3d/index.js",        "tipo": "3d",       "pesoMaxKB": 20, "depende": ["nucleo"],
+                       "libs": ["libs/three.module.js", "libs/three.core.js", "libs/three-addons/controls/OrbitControls.js"], "pesoLibsKB": 800 },
+    "personagens3d": { "arquivo": "modulos/personagens3d/index.js", "tipo": "3d",       "pesoMaxKB": 15, "depende": ["cena3d"],
+                       "libs": ["libs/three-addons/loaders/GLTFLoader.js", "libs/three-addons/utils/BufferGeometryUtils.js", "libs/three-addons/utils/SkeletonUtils.js"], "pesoLibsKB": 80 },
+    "camera3d":      { "arquivo": "modulos/camera3d/index.js",      "tipo": "3d",       "pesoMaxKB": 15, "depende": ["cena3d"] },
+    "realce3d":      { "arquivo": "modulos/realce3d/index.js",      "tipo": "3d",       "pesoMaxKB": 15, "depende": ["cena3d"] },
+    "holograma":     { "arquivo": "modulos/holograma/index.js",     "tipo": "3d",       "pesoMaxKB": 20, "depende": ["cena3d"],
+                       "libs": ["libs/three-addons/postprocessing/EffectComposer.js", "libs/three-addons/postprocessing/RenderPass.js",
+                                "libs/three-addons/postprocessing/UnrealBloomPass.js", "libs/three-addons/postprocessing/Pass.js",
+                                "libs/three-addons/postprocessing/ShaderPass.js", "libs/three-addons/postprocessing/MaskPass.js",
+                                "libs/three-addons/shaders/CopyShader.js",
+                                "libs/three-addons/shaders/LuminosityHighPassShader.js"], "pesoLibsKB": 40 }
+  },
+  "planejados": {
+    "cena2d": "PixiJS para cenas 2D pintadas com muitos objetos (ver exemplos/referencia/cena2d-camadas.html)",
+    "rive":   "Rive para vetor com ossos e rostos vivos (ver exemplos/referencia/rosto-rive.html e exercicio-rive.html)"
+  }
+}

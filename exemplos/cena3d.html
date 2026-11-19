@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Motor Pixel — cena 3D com personagem</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<canvas class="cena" id="cena" aria-label="Cena 3D com um boneco"></canvas>
+<div class="info" id="info">Cena 3D (cena3d + personagens3d). Gire com o dedo ou o mouse.</div>
+<div class="barra"><button id="comemorar">🎉 Comemorar</button><button id="feliz">🙂 Feliz</button><button id="leve">🪶 Modo leve</button></div>
+<script type="module">
+import { Motor } from '../1.0/motor.js';
+const { cena3d, personagens3d } = await Motor.usar('cena3d', 'personagens3d');
+const cena = cena3d.criarCena(document.getElementById('cena'), { girar: true, neblina: [8, 30], camera: [0, 1.5, 4], alvo: [0, 1, 0] });
+const { THREE } = cena;
+const chao = new THREE.Mesh(new THREE.CircleGeometry(6, 48), new THREE.MeshStandardMaterial({ color: '#BFE9A8', roughness: 1 }));
+chao.rotation.x = -Math.PI / 2; chao.receiveShadow = true; cena.scene.add(chao);
+const boneco = await personagens3d.criarPersonagem(null, 'modelos/boneco.glb', cena.scene);
+boneco.tocar('parado');
+cena.aCadaQuadro((dt) => boneco.atualizar(dt));
+document.getElementById('comemorar').onclick = () => boneco.tocarUmaVez('comemorar');
+document.getElementById('feliz').onclick = () => boneco.expressao('feliz');
+document.getElementById('leve').onclick = () => { localStorage.setItem('motor.modoLeve', localStorage.getItem('motor.modoLeve') === '1' ? '0' : '1'); location.reload(); };
+document.getElementById('info').textContent += cena.leve ? ' Modo leve ligado.' : '';
+window.__exemplo = { cena, boneco };
+</script>
+</body>
+</html>

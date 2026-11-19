@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exemplo — módulos vetor + zoom (mapa do corpo)</title>
+<style>
+  body { margin:0; background:#11141B; color:#fff; font-family:system-ui; display:flex; flex-direction:column; height:100vh; }
+  header { display:flex; flex-wrap:wrap; gap:6px; padding:8px; }
+  button { background:#232A36; color:#fff; border:0; border-radius:12px; padding:9px 12px; font:600 14px system-ui; }
+  #palco { flex:1; min-height:0; }
+  #palco svg { width:100%; height:100%; display:block; }
+  .m { fill:#D9DEE7; stroke:#8C95A6; stroke-width:1.2; }
+  #info { padding:8px 12px; font-size:14px; color:#AAB3C5; min-height:20px; }
+</style>
+</head>
+<body>
+<header>
+  <button id="supino">Supino</button>
+  <button id="agacha">Agachamento</button>
+  <button id="focar">Zoom no músculo</button>
+  <button id="ajustar">Ajustar</button>
+  <button id="neon">Neon</button>
+</header>
+<div id="palco">
+  <!-- Arte de exemplo com formas simples. Na versão real o SVG vem do ilustrador,
+       com cada parte num elemento com id (ver docs/03-vetorial.md). -->
+  <svg id="corpo" viewBox="0 0 200 400" aria-label="Mapa do corpo, de frente">
+    <circle class="m" id="cabeca" cx="100" cy="35" r="22"/>
+    <rect class="m" id="trapezio" x="80" y="58" width="40" height="10" rx="5"/>
+    <ellipse class="m" id="deltoide_esq" cx="62" cy="80" rx="14" ry="12"/>
+    <ellipse class="m" id="deltoide_dir" cx="138" cy="80" rx="14" ry="12"/>
+    <ellipse class="m" id="peitoral" cx="100" cy="92" rx="34" ry="18"/>
+    <rect class="m" id="biceps_esq" x="44" y="92" width="16" height="46" rx="8"/>
+    <rect class="m" id="biceps_dir" x="140" y="92" width="16" height="46" rx="8"/>
+    <rect class="m" id="antebraco_esq" x="40" y="142" width="14" height="50" rx="7"/>
+    <rect class="m" id="antebraco_dir" x="146" y="142" width="14" height="50" rx="7"/>
+    <rect class="m" id="abdomen" x="80" y="112" width="40" height="66" rx="12"/>
+    <ellipse class="m" id="obliquos" cx="100" cy="190" rx="34" ry="14"/>
+    <rect class="m" id="quadriceps_esq" x="70" y="206" width="26" height="92" rx="13"/>
+    <rect class="m" id="quadriceps_dir" x="104" y="206" width="26" height="92" rx="13"/>
+    <rect class="m" id="panturrilha_esq" x="72" y="304" width="20" height="74" rx="10"/>
+    <rect class="m" id="panturrilha_dir" x="108" y="304" width="20" height="74" rx="10"/>
+  </svg>
+</div>
+<div id="info">Toque num músculo para marcar onde dói.</div>
+<script type="module">
+  import { Motor } from '../1.0/motor.js';
+  const { vetor, zoom } = await Motor.usar('vetor', 'zoom');
+
+  const svg = document.getElementById('corpo');
+  const z = zoom.criarZoom(svg);
+  const info = document.getElementById('info');
+
+  const exercicios = {
+    supino: { principal: ['peitoral'], apoio: ['deltoide_esq', 'deltoide_dir', 'antebraco_esq', 'antebraco_dir'] },
+    agacha: { principal: ['quadriceps_esq', 'quadriceps_dir'], apoio: ['panturrilha_esq', 'panturrilha_dir', 'abdomen'] },
+  };
+  let atual = 'supino';
+  const mostrar = (n) => { atual = n; vetor.realcar(svg, exercicios[n]); info.textContent = `Principal: ${exercicios[n].principal.join(', ')}`; };
+  mostrar('supino');
+
+  document.getElementById('supino').onclick = () => mostrar('supino');
+  document.getElementById('agacha').onclick = () => mostrar('agacha');
+  document.getElementById('focar').onclick = () => z.focar(exercicios[atual].principal[0]);
+  document.getElementById('ajustar').onclick = () => z.ajustar();
+  let neonLigado = false;
+  document.getElementById('neon').onclick = () => { neonLigado = !neonLigado; vetor.neon(svg, '#2F7BFF', neonLigado); };
+
+  const todos = [...svg.querySelectorAll('[id]')].map((e) => e.id).filter((id) => id !== 'corpo');
+  vetor.aoTocarParte(svg, todos, (id) => {
+    vetor.realcar(svg, { principal: [id], pulsar: false });
+    info.textContent = `Dói em: ${id.replace('_', ' ')} — mostrar exercícios que aliviam ou evitam esta região`;
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exemplo — exercício vetorial (RiseONE)</title>
+<style>
+  :root { --fundo:#11141B; --corpo:#D9DEE7; --contorno:#8C95A6; --ativo:#FF3B3B; --apoio:#FF8A8A; --banco:#5B8CFF; }
+  body { margin:0; background:var(--fundo); color:#fff; font-family:system-ui; display:flex; flex-direction:column; height:100vh; }
+  header { display:flex; gap:8px; padding:10px; align-items:center; }
+  button { background:#232A36; color:#fff; border:0; border-radius:12px; padding:10px 14px; font:600 15px system-ui; }
+  button.on { background:#FF7A2F; }
+  #palco { flex:1; touch-action:none; }
+  svg { width:100%; height:100%; display:block; }
+  .musculo { fill:var(--corpo); stroke:var(--contorno); stroke-width:1.2; transition:fill .2s; }
+  .musculo.apoio { fill:var(--apoio); }
+  .musculo.ativo { fill:var(--ativo); animation:pulsa 1.2s ease-in-out infinite; }
+  @keyframes pulsa { 50% { fill:#B71C1C; } }
+  @media (prefers-reduced-motion: reduce) { .musculo.ativo { animation:none; } .pose { transition:none !important; } }
+  .pose { transition:transform .25s ease-in-out; }
+  #info { padding:8px 12px; font-size:14px; color:#AAB3C5; }
+</style>
+</head>
+<body>
+<header>
+  <button id="lado" class="on">De lado</button>
+  <button id="ajustar">Ajustar à tela</button>
+  <button id="zoomMusculo">Zoom no músculo</button>
+  <button id="encosto">Encosto: 0°</button>
+</header>
+<div id="palco">
+  <!-- Arte de exemplo com formas simples. Na versão real, este SVG vem do ilustrador,
+       com cada músculo num <path id="..."> (ver 01-camadas-e-nomes.md). -->
+  <svg id="svg" viewBox="0 0 400 300" aria-label="Supino reto, vista de lado">
+    <g id="banco">
+      <rect x="60" y="170" width="240" height="14" rx="6" fill="var(--banco)"/>
+      <line x1="90" y1="184" x2="90" y2="260" stroke="var(--banco)" stroke-width="8"/>
+      <line x1="270" y1="184" x2="270" y2="260" stroke="var(--banco)" stroke-width="8"/>
+      <g id="encostoBanco"><rect x="60" y="170" width="110" height="14" rx="6" fill="#3F6FE0"/></g>
+    </g>
+    <g id="corpo">
+      <ellipse class="musculo" id="cabeca" cx="80" cy="150" rx="20" ry="18"/>
+      <ellipse class="musculo" id="abdomen" cx="170" cy="158" rx="40" ry="14"/>
+      <ellipse class="musculo" id="peitoral" cx="120" cy="150" rx="28" ry="16"/>
+      <ellipse class="musculo" id="quadriceps" cx="240" cy="160" rx="38" ry="12"/>
+      <!-- braço: gira no ombro (120,148) -->
+      <g class="pose" id="braco" style="transform-origin:120px 148px">
+        <ellipse class="musculo" id="deltoide_anterior" cx="120" cy="138" rx="12" ry="10"/>
+        <rect class="musculo" id="triceps" x="114" y="95" width="13" height="42" rx="6"/>
+        <rect x="80" y="86" width="90" height="6" rx="3" fill="#C9CED8"/>
+        <circle cx="80" cy="89" r="12" fill="#9AA3B4"/><circle cx="170" cy="89" r="12" fill="#9AA3B4"/>
+      </g>
+    </g>
+  </svg>
+</div>
+<div id="info">Supino reto — principal: peitoral · também: tríceps, deltoide anterior</div>
+<script>
+  // Dados do exercício (o app já tem os músculos; aqui no formato do 01-camadas-e-nomes.md)
+  const exercicio = { principal: ['peitoral'], secundarios: ['triceps', 'deltoide_anterior'] };
+  const svg = document.getElementById('svg');
+
+  // 1) Acender músculos
+  for (const id of exercicio.principal) document.getElementById(id)?.classList.add('ativo');
+  for (const id of exercicio.secundarios) document.getElementById(id)?.classList.add('apoio');
+
+  // 2) Poses: desce em 2 s, sobe em 1 s (braço gira em volta do ombro)
+  const braco = document.getElementById('braco');
+  const reduzir = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  async function ciclo() {
+    while (true) {
+      braco.style.transition = 'transform 2s ease-in-out'; braco.style.transform = 'rotate(-35deg)';
+      await espera(2100);
+      braco.style.transition = 'transform 1s ease-in-out'; braco.style.transform = 'rotate(0deg)';
+      await espera(1300);
+    }
+  }
+  const espera = (ms) => new Promise((r) => setTimeout(r, ms));
+  if (!reduzir) ciclo();
+
+  // 3) Zoom vetorial: mudar o viewBox (sempre nítido)
+  const original = { x: 0, y: 0, w: 400, h: 300 };
+  let vb = { ...original };
+  const aplicar = () => svg.setAttribute('viewBox', `${vb.x} ${vb.y} ${vb.w} ${vb.h}`);
+  function animarPara(alvo, ms = 400) {
+    const de = { ...vb }, t0 = performance.now();
+    const passo = (t) => {
+      const k = Math.min(1, (t - t0) / ms), s = k * k * (3 - 2 * k);
+      for (const c of ['x', 'y', 'w', 'h']) vb[c] = de[c] + (alvo[c] - de[c]) * s;
+      aplicar(); if (k < 1) requestAnimationFrame(passo);
+    };
+    requestAnimationFrame(passo);
+  }
+  document.getElementById('ajustar').onclick = () => animarPara(original);
+  document.getElementById('zoomMusculo').onclick = () => {
+    const b = document.getElementById(exercicio.principal[0]).getBBox();
+    const m = 30; const w = b.width + m * 2; const h = w * 0.75;
+    animarPara({ x: b.x - m, y: b.y + b.height / 2 - h / 2, w, h });
+  };
+
+  // Pinça (2 dedos) e arrastar
+  const toques = new Map(); let base = null;
+  const palco = document.getElementById('palco');
+  palco.addEventListener('pointerdown', (e) => { toques.set(e.pointerId, e); base = null; });
+  palco.addEventListener('pointerup', (e) => { toques.delete(e.pointerId); base = null; });
+  palco.addEventListener('pointermove', (e) => {
+    if (!toques.has(e.pointerId)) return;
+    toques.set(e.pointerId, e);
+    const pts = [...toques.values()];
+    const cx = pts.reduce((a, p) => a + p.clientX, 0) / pts.length;
+    const cy = pts.reduce((a, p) => a + p.clientY, 0) / pts.length;
+    const dist = pts.length > 1 ? Math.hypot(pts[0].clientX - pts[1].clientX, pts[0].clientY - pts[1].clientY) : 0;
+    if (!base) { base = { cx, cy, dist, vb: { ...vb } }; return; }
+    const escalaTela = vb.w / palco.clientWidth;
+    let fator = pts.length > 1 && base.dist ? base.dist / dist : 1;
+    const w = Math.min(original.w, Math.max(original.w / 6, base.vb.w * fator));
+    fator = w / base.vb.w;
+    vb = { w, h: base.vb.h * fator,
+           x: base.vb.x + (base.vb.w - w) / 2 - (cx - base.cx) * escalaTela,
+           y: base.vb.y + (base.vb.h - base.vb.h * fator) / 2 - (cy - base.cy) * escalaTela };
+    aplicar();
+  });
+
+  // 4) Aparelho: encosto em degraus, girando no eixo do assento (170,177)
+  const angulos = [0, 15, 30, 45]; let i = 0;
+  const encosto = document.getElementById('encostoBanco');
+  encosto.style.transformOrigin = '170px 177px'; encosto.style.transition = 'transform .6s ease-in-out';
+  document.getElementById('encosto').onclick = (e) => {
+    i = (i + 1) % angulos.length;
+    encosto.style.transform = `rotate(${angulos[i]}deg)`;
+    e.target.textContent = `Encosto: ${angulos[i]}°`;
+  };
+</script>
+</body>
+</html>

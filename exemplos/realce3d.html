@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Motor Pixel — partes 3D que acendem</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<canvas class="cena" id="cena" aria-label="Boneco 3D com partes que acendem"></canvas>
+<div class="info" id="info">realce3d: toque numa parte do boneco para saber o nome dela.</div>
+<div class="barra"><button id="bracos">💪 Braços</button><button id="pernas">🦵 Pernas</button><button id="cabeca">🔍 Cabeça</button><button id="apagar">⭕ Apagar</button></div>
+<script type="module">
+import { Motor } from '../1.0/motor.js';
+const { cena3d, personagens3d, realce3d } = await Motor.usar('cena3d', 'personagens3d', 'realce3d');
+const cena = cena3d.criarCena(document.getElementById('cena'), { girar: true, fundo: '#1b1d3a', camera: [0, 1.4, 3.6], alvo: [0, 1.1, 0] });
+const boneco = await personagens3d.criarPersonagem(null, 'modelos/boneco.glb', cena.scene);
+const realce = realce3d.criarRealce(boneco.raiz, cena);
+const info = document.getElementById('info');
+document.getElementById('bracos').onclick = () => realce.realcar({ principal: ['braco_esq', 'braco_dir'], apoio: ['tronco'] });
+document.getElementById('pernas').onclick = () => realce.realcar({ principal: ['perna_esq', 'perna_dir'] });
+document.getElementById('cabeca').onclick = () => realce.focar('cabeca', 1.4);
+document.getElementById('apagar').onclick = () => realce.apagar();
+realce.aoTocarParte(realce.nomes(), (nome) => { realce.realcar({ principal: [nome], pulsar: false }); info.textContent = 'Você tocou: ' + nome.replace('_', ' '); });
+window.__exemplo = { cena, boneco, realce };
+</script>
+</body>
+</html>
