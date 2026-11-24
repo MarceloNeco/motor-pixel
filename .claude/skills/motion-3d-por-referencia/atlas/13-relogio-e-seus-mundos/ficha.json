@@ -1,0 +1,16 @@
+{
+  "numero": 13,
+  "nome": "O relógio e seus mundos",
+  "estilo": "Produto que explode no seu mundo",
+  "tipo": "Produto",
+  "aprovado_em": "2026-11-16",
+  "video": "relogio-e-seus-mundos.mp4",
+  "poster": "poster.jpg",
+  "duracao_s": 12,
+  "formato": "1920×1080, 30 quadros por segundo, sem áudio, em laço",
+  "motor": "three.js (cena 100% em código) + Chrome sem janela + ffmpeg",
+  "descricao": "Um produto se monta girando no ar, a última peça chega voando e encaixa, ele encara a câmera e, num giro, explode no mundo de coisas de quem usa aquela versão: uns quinze objetos de brinquedo flutuando em câmera lenta, um cartão de vidro com uma leitura do produto e uma corda costurando tudo. Os objetos se recolhem e viram a próxima versão, de outra cor, e o cenário pastel desfocado troca de cor junto. Sem corte: toda troca acontece dentro de um borrão de movimento.",
+  "mostrado_aqui": "Um relógio em três cores, 4 segundos cada: verde com pulseira de nylon (mundo da trilha: \"Trilha 4,2 km\"), amarelo com caixa grafite (mundo da música: \"Tocando agora 02:14\") e violeta com pulseira de couro (mundo do sono: \"Sono 7h 42 min\"). O último quadro emenda no primeiro.",
+  "bom_para": "Um produto com versões, cores ou planos, em que cada versão tem um público ou um uso: relógio, fone, tênis, garrafa, mochila, aplicativo com perfis, plano básico, médio e completo. Funciona quando dá para responder \"que coisas cercam quem escolhe esta versão?\" com dez a quinze objetos reconhecíveis.",
+  "referencia_de_metodo": "Filme de produto de smartwatch (laranja, azul e rosa; treino, viagem e pet): https://br.pinterest.com/pin/127578601938453265/"
+}

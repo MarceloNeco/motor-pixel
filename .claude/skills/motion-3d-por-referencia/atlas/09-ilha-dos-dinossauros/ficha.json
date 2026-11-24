@@ -1,0 +1,16 @@
+{
+  "numero": 9,
+  "nome": "Ilha dos dinossauros",
+  "estilo": "Ilha em setores",
+  "tipo": "Laço",
+  "aprovado_em": "2026-11-16",
+  "video": "ilha-dos-dinossauros.mp4",
+  "poster": "poster.jpg",
+  "duracao_s": 24,
+  "formato": "1920×1080, 24 quadros por segundo, sem áudio, em laço",
+  "motor": "three.js (cena 100% em código) + Chrome sem janela + ffmpeg",
+  "descricao": "Uma ilha-maquete vista de cima, com o mar enchendo o quadro, repartida em seis fatias ao redor de um vulcão. Os rios que descem até a praia são a divisa dos setores, e cada setor tem o seu chão, a sua vegetação e um personagem que repete um laço de 4 segundos sem sair do lugar. O cenário é facetado e simples; os bichos têm pele de escamas, listras e manchas, cara séria e um olho de adesivo de pupila solta. A câmera fica parada: mostra a ilha inteira, corta seco para cada setor em sentido horário e volta para a ilha, emendando no começo.",
+  "mostrado_aqui": "Seis dinossauros, um por setor: T-rex na selva (ruge), estegossauro no samambaial (anda no lugar), alossauro no cânion (varre a cauda), paquicefalossauro na pedreira (dá uma cabeçada), tricerátopo na campina (raspa a pata) e parassaurolofo no brejo (berra). Sem texto em tela.",
+  "bom_para": "Qualquer conjunto de 3 a 6 coisas que vivem lado a lado e merecem um território próprio: áreas de uma empresa, produtos de uma linha, perfis de cliente, etapas que não têm ordem, ferramentas de um ecossistema. Cada setor é um item, o personagem é a cara dele e o gesto do laço é o que ele faz. Também serve como fundo em laço para abertura ou encerramento.",
+  "referencia_de_metodo": "Pack \"Googly Dinosaurs\" (Supergiant, Motion Array), de onde vieram o elenco, o laço parado no lugar e o olho de adesivo: https://motionarray.com/stock-motion-graphics/pack-of-6-googly-dinosaurs-on-alpha-loop-2486136/"
+}

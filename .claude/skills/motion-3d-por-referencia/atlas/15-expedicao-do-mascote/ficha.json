@@ -1,0 +1,16 @@
+{
+  "numero": 15,
+  "nome": "A expedição do mascote",
+  "estilo": "Desenho que vira mundo",
+  "tipo": "História",
+  "aprovado_em": "2026-11-16",
+  "video": "expedicao-do-mascote.mp4",
+  "poster": "poster.jpg",
+  "duracao_s": 46.2,
+  "formato": "1600×1600, 30 quadros por segundo, sem áudio",
+  "motor": "three.js (cena 100% em código) + Chrome sem janela + ffmpeg",
+  "descricao": "Um lápis desenha uma ilustração inteira numa folha de papel, traço por traço, filmado de perto com a câmera inclinada. A câmera abre, uma onda de cor atravessa o quadro e o desenho vira pintura. Aí a câmera sai do eixo e a pintura se revela um mundo com profundidade: cada peça do desenho tem volume, a floresta e o céu deslizam em camadas, e seis planos de trilho passeiam por ele até voltar ao quadro de frente. Cor chapada com contorno escuro, pôr do sol do azul ao laranja, luzes acesas.",
+  "mostrado_aqui": "A expedição do mascote do Claude Code: ele chega de dirigível a uma ilha flutuante com observatório, moinho e casinha; a tripulação atravessa uma ponte de corda e acampa na ilhota ao lado. Sem texto na tela.",
+  "bom_para": "Dar profundidade a uma ilustração 2D que já existe em código, ou que vale a pena desenhar em código: capa de curso, abertura de canal, o mundo de um mascote, o mapa de um produto ou de uma jornada. Funciona quando a imagem tem muitos elementos separados em planos (frente, meio e fundo) e um personagem para a câmera visitar de perto.",
+  "referencia_de_metodo": "Nosso motion 2D \"06-mascote-aventura\" (desenho a lápis que vira pintura), que estudou um post de @mickeyxfriedman no X: https://x.com/mickeyxfriedman/status/2115932308138287552"
+}

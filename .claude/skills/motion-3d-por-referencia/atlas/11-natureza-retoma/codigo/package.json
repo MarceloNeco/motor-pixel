@@ -1,0 +1,14 @@
+{
+  "name": "natureza-retoma",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "cards": "node render.mjs cards",
+    "video": "node render.mjs video",
+    "alpha": "node render.mjs video --alpha"
+  },
+  "dependencies": {
+    "puppeteer-core": "^25.17.0",
+    "three": "^0.187.0"
+  }
+}

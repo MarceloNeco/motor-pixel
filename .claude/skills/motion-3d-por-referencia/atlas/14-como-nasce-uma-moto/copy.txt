@@ -1,0 +1,12 @@
+COMO NASCE UMA MOTO
+1
+RODAS
+2
+QUADRO
+3
+MOTOR
+4
+TANQUE
+1400 MM
+(toda letra e todo número são de traço único, desenhados em código; não há arquivo de fonte)
+Nada além disso aparece em tela.

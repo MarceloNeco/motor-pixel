@@ -1,0 +1,16 @@
+{
+  "numero": 16,
+  "nome": "Caçada no labirinto",
+  "estilo": "Jogo de labirinto em miniatura",
+  "tipo": "História",
+  "aprovado_em": "2026-11-16",
+  "video": "cacada-no-labirinto.mp4",
+  "poster": "poster.jpg",
+  "duracao_s": 15,
+  "formato": "1920×1080, 30 quadros por segundo, sem áudio",
+  "motor": "three.js (cena 100% em código) + Chrome sem janela + ffmpeg",
+  "descricao": "Uma partida de jogo de labirinto filmada como brinquedo de mesa, à noite. O labirinto é uma placa de circuito azul-noite em que os chips são as paredes, os corredores são fileiras de pontos de luz quente refletidos no piso polido, e os personagens são bonecos de plástico brilhante. A câmera segue o herói de perto, em 3/4 de cima e com o fundo desfocado, num plano só, e o placar fica pequeno nos cantos. A história tem a virada do gênero: perseguido, o herói pega um núcleo de energia e passa a caçar quem o perseguia. No fim a câmera sobe e mostra a placa inteira, com o rastro escuro do caminho percorrido.",
+  "mostrado_aqui": "O Clawd, mascote do Claude Code, recolhe pontos de luz e foge de dois monstrinhos (um ciclope verde e um violeta de três olhos) e de dois fantasmas. Aos 7,7 s ele pega o núcleo de energia, encara os quatro e sai caçando: +100, +200, +300 e +400 no placar. Na tela, só \"Pontos\" e \"Vidas\".",
+  "bom_para": "Histórias de virada em que quem era perseguido passa a perseguir: o pequeno contra vários, o problema que vira vantagem depois de uma ferramenta ou de um aprendizado, o antes e depois de uma solução. O herói é o seu mascote ou produto, os perseguidores são os problemas do seu público e o núcleo de energia é o que muda o jogo. Também serve de abertura ou vinheta com mascote.",
+  "referencia_de_metodo": "Uma imagem 3D de jogo de labirinto no Pinterest, de onde veio só a fotografia (ambiente azul-noite, piso polido, pontos de luz quente, plástico brilhante, câmera 3/4 próxima com fundo desfocado): https://br.pinterest.com/pin/946881890426649762/"
+}

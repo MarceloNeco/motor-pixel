@@ -1,0 +1,16 @@
+{
+  "numero": 4,
+  "nome": "A corrente de blocos",
+  "estilo": "Gráfico que vira objeto",
+  "tipo": "Explicativo",
+  "aprovado_em": "2026-11-16",
+  "video": "corrente-de-blocos.mp4",
+  "poster": "poster.jpg",
+  "duracao_s": 12,
+  "formato": "1920×1080, 30 quadros por segundo, sem áudio",
+  "motor": "three.js (cena 100% em código) + Chrome sem janela + ffmpeg",
+  "descricao": "Um gráfico de barras fotografado como joia: cada item da série é um bloco de pedra com o rótulo em relevo, ligado ao vizinho por uma corrente de aço, e o valor é uma pilha de moedas que cai do alto e assenta enquanto o número em cima conta junto. Cofre de banco na penumbra, um foco quente de cima, balcão de pedra preta que reflete as pilhas, texto em marfim e uma única cor de acento. A câmera passa rente de bloco em bloco e recua no fim para a conclusão escrita.",
+  "mostrado_aqui": "O fechamento anual do Bitcoin de 2022 a 2026, em dólares: US$ 16,5 mil, 42,3 mil, 93,4 mil, 87,5 mil e 65,0 mil (2026 pela cotação de 16/11). Cada moeda vale US$ 2 mil. Na tela: \"Cada moeda, dois mil dólares.\" e \"De 2022 até hoje, quase quadruplicou.\"",
+  "bom_para": "Qualquer série curta de valores com rótulo (de 3 a 6 itens): evolução ano a ano, ranking, antes e depois, comparação de planos ou de resultados. Funciona melhor quando o valor é dinheiro ou algo que se conta em unidades, e quando existe uma relação entre vizinhos para mostrar (variação, diferença, intervalo).",
+  "referencia_de_metodo": "Estilo #19 \"Data Skyline\" do 3D Style Atlas (Futurepedia): https://www.futurepedia.io/resources/3d-style-atlas/view"
+}

@@ -1,0 +1,16 @@
+{
+  "numero": 10,
+  "nome": "Adesivos no setup",
+  "estilo": "Carimbo de adesivos",
+  "tipo": "Promo de produto",
+  "aprovado_em": "2026-11-16",
+  "video": "adesivos-no-setup.mp4",
+  "poster": "poster.jpg",
+  "duracao_s": 30,
+  "formato": "1920×1080, 30 quadros por segundo, sem áudio",
+  "motor": "three.js (cena 100% em código) + Chrome sem janela + ffmpeg",
+  "descricao": "Objetos 3D flutuam num estúdio azul e recebem adesivos recortados, carimbados um a um, enquanto frases curtas em itálico pesado aparecem por linha. Cada objeto segue a mesma gramática: título grande, corte seco para um macro onde os adesivos estalam, corte seco para o plano aberto com uma frase ao lado. Na troca de objeto, uma palavra gigante cruza a tela por trás dele. Tudo em corte seco, sem fusão.",
+  "mostrado_aqui": "Uma caixa de papelão chega, é coberta de adesivos em português, treme e estoura aberta; de dentro dela saem um headset coral, um notebook de alumínio e um teclado ABNT2, e cada um ganha os próprios adesivos. São 15 adesivos desenhados em código (FRÁGIL, ESTE LADO PARA CIMA, BORA!, FEITO NO BRASIL, MOVIDO A CAFÉ, valeu. e outros) e 25 carimbos ao longo do filme.",
+  "bom_para": "Promo de produto, abertura de canal, lançamento de kit ou coleção e qualquer ideia de \"deixe com a sua cara\": personalização, comunidade, marca que vira adesivo. Funciona quando há de três a quatro objetos reconhecíveis de longe, com pelo menos uma face plana para receber os adesivos, e uma frase curta para cada um.",
+  "referencia_de_metodo": "Template \"Stamp On Intro\", de Replay Lab (Motion Array): https://motionarray.com/motion-graphics-templates/stamp-on-intro-3484441/"
+}

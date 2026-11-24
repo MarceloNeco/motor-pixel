@@ -1,0 +1,13 @@
+{
+  "name": "adesivos-no-setup",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "cards": "node render.mjs cards",
+    "video": "node render.mjs video"
+  },
+  "dependencies": {
+    "puppeteer-core": "^25.17.0",
+    "three": "^0.187.0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "numero": 17,
+  "nome": "Restaurante em miniatura",
+  "estilo": "Time-lapse de maquete",
+  "tipo": "Transformação",
+  "aprovado_em": "2026-11-17",
+  "video": "restaurante-miniatura.mp4",
+  "poster": "poster.jpg",
+  "duracao_s": 8,
+  "formato": "1920×1080, 24 quadros por segundo, com áudio sintetizado em código",
+  "motor": "three.js (cena 100% em código; só o letreiro lê uma fonte arredondada do sistema) + Chrome sem janela + ffmpeg",
+  "descricao": "Uma esquina de cidade em miniatura, à noite, com asfalto molhado, vista de cima por uma câmera travada com profundidade de campo de maquete. Uma mão gigante crava uma bandeirinha de palito num terreno vazio e, em time-lapse, o lugar se transforma: sobe um anel de vidro, uma treliça de madeira, e um hambúrguer gigante cai em camadas no telhado. A mão crava a bandeira no topo do pão, o letreiro 3D e os neons acendem, o pátio enche de guarda-sóis. Tudo é time-lapse de verdade: carros riscam o quadro, ônibus chegam e saem, e as pessoas, minúsculas, pulam de lugar em grupos.",
+  "mostrado_aqui": "Uma hamburgueria redonda de vidro que nasce num terreno vazio. Na tela: \"MEGA BURGER\" no letreiro 3D e na flâmula, \"ABERTO\" no neon da vitrine, \"OLHE\" pintado no asfalto, \"PARE\" na placa da esquina, \"R. AURORA\" e \"AV. DO SOL\" nas placas de rua e \"CENTRO\" no ônibus. O áudio é sintetizado: ruído de cidade, carros que cruzam de um lado ao outro, marteladas da obra, os baques das camadas do hambúrguer, o zumbido do neon.",
+  "bom_para": "Revelar um negócio, um lançamento ou uma inauguração (restaurante, sorveteria, cafeteria, loja) com a graça de uma maquete que se constrói sozinha. Serve para qualquer marca que tenha um objeto reconhecível para virar o herói gigante no telhado, e para vídeos de abertura que precisam mostrar \"isso vai nascer aqui\" em poucos segundos.",
+  "referencia_de_metodo": "Shot \"Miniature Restaurant\" no Dribbble: https://dribbble.com/shots/27850125-Miniature-Restaurant (vídeo gerado por IA; só o método e as medidas entram aqui, o vídeo dele não)"
+}

@@ -1,0 +1,16 @@
+{
+  "numero": 12,
+  "nome": "Kombi na praia",
+  "estilo": "Viagem em miniatura",
+  "tipo": "História",
+  "aprovado_em": "2026-11-16",
+  "video": "kombi-na-praia.mp4",
+  "poster": "poster.jpg",
+  "duracao_s": 16,
+  "formato": "1920×1080, 30 quadros por segundo, sem áudio",
+  "motor": "three.js (cena 100% em código) + Chrome sem janela + ffmpeg",
+  "descricao": "Um veículo de brinquedo atravessa um mundo de massinha num único plano, com foco curto de miniatura: só ele fica nítido, o primeiro plano e o fundo borram. Ele quica de morro em morro por uma estrada de terra, a carga no teto balança com atraso, a poeira sai em bolinhas, e a viagem termina numa paisagem aberta. Morros lisos, arbustos de folha miúda, montanhas em cone verde-água, céu azul com nuvens fofas, mar turquesa com espuma e coqueiros.",
+  "mostrado_aqui": "Uma kombi food truck com uma pilha de panquecas no teto quica pela estrada dos morros, dá um salto grande quando o mar aparece, desce entre coqueiros, freia na areia deixando os rastros dos pneus e para de frente para a baía. Não há texto em tela.",
+  "bom_para": "Jornadas com chegada: do pedido à entrega, da ideia ao lançamento, uma viagem, uma mudança, a ida até o cliente. O veículo é a marca ou o produto, a carga no teto é o que ele leva, e a paisagem final é o destino. Também serve de abertura ou encerramento de vídeo e de fundo para um título que entra só no plano final.",
+  "referencia_de_metodo": "Kombi food truck das panquecas, crédito a @eslammo7amed, republicado por @motiondesigners.pro: https://br.pinterest.com/pin/127578601936636607/"
+}

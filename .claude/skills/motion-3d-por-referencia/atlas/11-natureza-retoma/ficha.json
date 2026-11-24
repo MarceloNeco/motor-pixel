@@ -1,0 +1,16 @@
+{
+  "numero": 11,
+  "nome": "Natureza retoma",
+  "estilo": "Objeto tomado pela natureza",
+  "tipo": "Elemento com alfa",
+  "aprovado_em": "2026-11-16",
+  "video": "natureza-retoma.mp4",
+  "poster": "poster.jpg",
+  "duracao_s": 8,
+  "formato": "1920×1080, 30 quadros por segundo, sem áudio; também sai em ProRes 4444 com canal alfa",
+  "motor": "three.js (cena 100% em código) + Chrome sem janela + ffmpeg",
+  "descricao": "Um objeto de uso humano flutua no vazio, gira devagar, e a natureza toma conta dele: o musgo avança em manchas de borda irregular e milhares de flores miúdas sobem, crescem e abrem por cima. As peças que identificam o objeto ficam descobertas, então ele continua reconhecível até o fim. Plástico de produto com verniz, uma luz grande e macia vinda da esquerda, fundo em degradê radial. Câmera parada, sem corte. O mesmo clipe sai sem fundo, para entrar por cima de outro vídeo.",
+  "mostrado_aqui": "Um controle de videogame genérico, branco na frente e cinza atrás, tomado por musgo e por flores em rosa, magenta, coral, laranja e amarelo, sobre um fundo marrom quente. Não há texto em tela.",
+  "bom_para": "Abertura, vinheta ou imagem de fundo para temas de abandono, renascimento, tempo passando, tecnologia que envelheceu ou sustentabilidade. Com o canal alfa, vira um elemento solto para compor sobre uma gravação, uma tela ou uma capa. Funciona com qualquer objeto de silhueta forte que tenha partes que o identifiquem.",
+  "referencia_de_metodo": "Pack Of 6 Nature Reclaimed Objects On Alpha (Motion Array): https://motionarray.com/stock-motion-graphics/pack-of-6-nature-reclaimed-objects-on-alpha-4237257/"
+}

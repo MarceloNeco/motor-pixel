@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>cacada-no-labirinto</title>
+<style>
+  @font-face { font-family: 'Inter'; src: url('./fontes/Inter-var.woff2') format('woff2'); font-weight: 100 900; }
+  @font-face { font-family: 'JetBrains Mono'; src: url('./fontes/JetBrainsMono-400.woff2') format('woff2'); font-weight: 400; }
+  @font-face { font-family: 'JetBrains Mono'; src: url('./fontes/JetBrainsMono-700.woff2') format('woff2'); font-weight: 700; }
+  :root { --papel: #f6f5f4; --marigold: #ffab1f; }
+  html, body { margin: 0; background: #000; overflow: hidden; }
+  #palco { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #000; }
+  canvas { position: absolute; inset: 0; display: block; width: 1920px; height: 1080px; }
+
+  /* placar: pequeno, nos cantos, para a cena continuar sendo o assunto */
+  .hud { position: absolute; top: 56px; color: var(--papel); text-shadow: 0 2px 14px rgba(0, 0, 0, .75); }
+  .hud.esq { left: 72px; }
+  .hud.dir { right: 72px; text-align: right; }
+  .rot { font: 700 15px/1 'JetBrains Mono', monospace; letter-spacing: .3em; text-transform: uppercase; opacity: .62; margin-bottom: 12px; }
+  .num { font: 800 44px/1 'Inter', sans-serif; font-variant-numeric: tabular-nums; letter-spacing: .01em; will-change: transform; transform-origin: left center; }
+  .vidas { display: flex; gap: 10px; justify-content: flex-end; }
+  .vidas i { position: relative; display: block; width: 32px; height: 21px; border-radius: 3px; background: rgb(215, 119, 87); box-shadow: 0 2px 12px rgba(0, 0, 0, .6); margin: 0 3px; }
+  .vidas i::before { content: ''; position: absolute; left: -4px; right: -4px; top: 10px; height: 5px; border-radius: 1px; background: rgb(215, 119, 87); }   /* bracinhos */
+  .vidas i::after { content: ''; position: absolute; left: 7px; top: 5px; width: 3px; height: 6px; background: #120b08; box-shadow: 15px 0 0 #120b08; }      /* olhos */
+
+  /* pontos que saltam quando um perseguidor é pego */
+  .pop { position: absolute; left: 0; top: 0; font: 800 54px/1 'Inter', sans-serif; color: #fff; white-space: nowrap; opacity: 0; will-change: transform, opacity; }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "/node_modules/three/build/three.module.js",
+  "three/addons/": "/node_modules/three/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<div id="palco">
+  <div class="hud esq" id="hud-esq"><div class="rot">Pontos</div><div class="num" id="pontos">00000</div></div>
+  <div class="hud dir" id="hud-dir"><div class="rot">Vidas</div><div class="vidas"><i></i><i></i><i></i></div></div>
+  <div id="pops"></div>
+</div>
+<script type="module" src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "__NOME__",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "cards": "node render.mjs cards",
+    "folha": "node render.mjs folha",
+    "video": "node render.mjs video",
+    "determinismo": "node render.mjs determinismo"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.2.5",
+    "puppeteer-core": "^25.17.0",
+    "three": "0.187.0"
+  }
+}

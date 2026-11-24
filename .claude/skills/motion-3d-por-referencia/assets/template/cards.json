@@ -1,0 +1,25 @@
+{
+  "titulo": "TROCAR: nome do motion",
+  "resumo": "TROCAR: formato, duração, quadros por segundo, com ou sem texto e som. De onde veio o método (link da referência).",
+  "mecanismo": "TROCAR: o motor do filme em uma frase que um espectador repetiria.",
+  "decisoes": ["TROCAR: o que você precisa que a pessoa decida (uma por linha). Apague se não houver."],
+  "metodo_x_mundo": [
+    { "papel": "herói", "referencia": "TROCAR", "nosso": "TROCAR" },
+    { "papel": "mundo / cenário", "referencia": "TROCAR", "nosso": "TROCAR" },
+    { "papel": "paleta", "referencia": "TROCAR", "nosso": "TROCAR" }
+  ],
+  "momentos": [
+    { "id": "01-montado", "nome": "Montado", "janela": "0,0 – 3,2 s", "move": "TROCAR: o que se move primeiro, quanto e em quanto tempo (física, não adjetivo).", "emenda": "TROCAR: o que conduz o olho até o próximo momento.", "ref": "" }
+  ],
+  "sistema": [
+    { "token": "câmera", "medido": "TROCAR: o que a perícia mediu", "nosso": "TROCAR: o valor no código" },
+    { "token": "luz principal", "medido": "TROCAR", "nosso": "TROCAR" },
+    { "token": "fundo", "medido": "TROCAR", "nosso": "#f7efe6" }
+  ],
+  "proibicoes": ["TROCAR: o que este filme nunca faz (cinco ou mais)."],
+  "risco": { "qual": "TROCAR: o elemento de maior risco da construção.", "plano_b": "TROCAR: o que fazer se ele não funcionar." },
+  "metas": [
+    { "medida": "Amplitude", "referencia": "TROCAR", "meta": "TROCAR" }
+  ],
+  "copy": ["TROCAR: toda palavra que aparece em tela, uma por linha. Nada além disso aparece."]
+}
