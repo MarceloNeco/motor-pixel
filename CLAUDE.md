@@ -16,3 +16,7 @@
 - **Skill `threejs`** (`.claude/skills/threejs/`, dono 24/Nov/2026): as instruções oficiais do Three.js para IAs (`llms.txt` e
   `llms-full.txt` do github.com/mrdoob/three.js, MIT) adaptadas às regras daqui (sem CDN, r187 local, WebGL por padrão).
   Mexeu em 3D? Use a skill. Trocou a versão do Three.js? Atualize a `referencia/` dela junto.
+- **Casa de tudo que é gráfico** (dono, 24/Nov/2026): 3D, vetorial, SVG e motion para o kids, o RiseONE e qualquer app da
+  SolverONE. Skills `motion-3d-por-referencia` e `referencia` (Atlas): ferramenta completa do Felipe Borges (Fala IA), como ele
+  publicou, com crédito em `.claude/skills/motion-3d-por-referencia/FONTE-SOLVERONE.md`; por cima valem as regras da skill
+  `threejs`. Vídeo pronto vai para o app como arquivo.

@@ -1,0 +1,16 @@
+{
+  "numero": 6,
+  "nome": "Casa de frente pro mar",
+  "estilo": "Pintura a óleo",
+  "tipo": "História",
+  "aprovado_em": "2026-11-16",
+  "video": "casa-de-frente-pro-mar.mp4",
+  "poster": "poster.jpg",
+  "duracao_s": 16,
+  "formato": "1920×1080, 30 quadros por segundo, sem áudio",
+  "motor": "three.js (cena 100% em código) + Chrome sem janela + ffmpeg",
+  "descricao": "Um quadro a óleo que se mexe. A cena é 3D de verdade (casa, mar, coqueiros, pássaros), mas sai como pintura sobre tela de linho: toques de pincel grossos presos às superfícies, cor quebrada, relevo de tinta sob luz rasante, trama da tela aparecendo nos escuros e uma margem crua com borda irregular. Céu cobalto com nuvens lilás, horizonte pêssego, mar turquesa, telhado vermelhão. Uma legenda manuscrita por parada, num recorte de tela crua no canto de baixo à esquerda.",
+  "mostrado_aqui": "A manhã chega a uma casa de praia: o sol nasce no mar, a luz atravessa as ondas com os pássaros e uma jangada, a praia abre os guarda-sóis e a casa abre venezianas e porta. No fim a câmera recua até o quadro inteiro. Na tela: \"O sol nasce no mar.\", \"A luz atravessa as ondas.\", \"A praia abre os guarda-sóis.\" e \"E a casa acorda de frente pro mar.\"",
+  "bom_para": "Histórias e processos que acontecem num lugar, contados como livro ilustrado: de onde vem uma coisa, um dia na vida, uma cadeia de causa e efeito em três ou quatro paradas. Pede um lugar com formas grandes e simples e alguma coisa que viaje de uma parada à outra (luz, vento, um rio, um personagem) para puxar a câmera.",
+  "referencia_de_metodo": "Estilo #13 \"Painted\" do 3D Style Atlas (Futurepedia): https://www.futurepedia.io/resources/3d-style-atlas/view"
+}

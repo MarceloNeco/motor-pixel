@@ -1,0 +1,16 @@
+{
+  "numero": 3,
+  "nome": "Duelo no entardecer",
+  "estilo": "Perseguição em plano único",
+  "tipo": "História",
+  "aprovado_em": "2026-11-16",
+  "video": "duelo-no-entardecer.mp4",
+  "poster": "poster.jpg",
+  "duracao_s": 14,
+  "formato": "1920×1080, 30 quadros por segundo, sem áudio",
+  "motor": "three.js (cena 100% em código) + Chrome sem janela + ffmpeg",
+  "descricao": "Um duelo aéreo ao pôr do sol sobre o mar, num único plano de perseguição: a câmera não larga o avião e o mundo inteiro gira em volta dele. Nuvens de bolhas em dois tons (violeta e pêssego, com borda dourada no contraluz), céu com cirros, mar com o caminho do sol, rastros nas pontas das asas, traçantes dourados e acabamento de película. Título em pilha, frase curta em itálico e legendas de manobra, tudo em português.",
+  "mostrado_aqui": "A Gaivota é atacada por trás pelo Falcão, escapa num rasante sobre o mar, sobe para o sol, dá um tonneau, deixa o Falcão passar direto, responde e mergulha em parafuso contra o sol. Na tela: \"DEIXA O CÉU TE LEVAR\" e \"voa leve.\".",
+  "bom_para": "Aberturas e vinhetas de impacto, viradas de jogo e histórias de superação em três atos (o ataque, a fuga, a virada), trailers curtos e qualquer peça que precise de uma frase de efeito em pilha seguida de uma frase curta que fica até o fim.",
+  "referencia_de_metodo": "\"Porco Rosso sunset dogfight\", @NFT_Chen no Prompt Motion (Opus 5.5 + Three.js): https://prompt-motion.com/nft-chen-5f8bb0"
+}

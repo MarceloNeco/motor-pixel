@@ -1,0 +1,14 @@
+{
+  "name": "restaurante-miniatura",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "cards": "node render.mjs cards",
+    "video": "node render.mjs video"
+  },
+  "dependencies": {
+    "opentype.js": "^1.3.4",
+    "puppeteer-core": "^25.17.0",
+    "three": "0.187.0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "numero": 1,
+  "nome": "Rotina na casa",
+  "estilo": "Maquete em corte",
+  "tipo": "História",
+  "aprovado_em": "2026-11-16",
+  "video": "rotina-na-casa.mp4",
+  "poster": "poster.jpg",
+  "duracao_s": 27.5,
+  "formato": "1920×1080, 24 quadros por segundo, sem áudio",
+  "motor": "three.js (cena 100% em código) + Chrome sem janela + ffmpeg",
+  "descricao": "Uma casa de boneca de dois andares vista em corte, sobre fundo infinito de papel: paredes creme com contorno escuro no corte, tábuas largas, tecido de trama grossa e um boneco articulado que atravessa a manhã inteira. A câmera fica parada em cada cômodo e toda troca de plano é corte seco.",
+  "mostrado_aqui": "A manhã de uma pessoa: acorda, escova os dentes, desce a escada, faz um café, se espreguiça e pula na piscina.",
+  "bom_para": "Rotinas, jornadas e passo a passos em que alguém percorre lugares em ordem: o dia de um cliente, o caminho de um pedido, um antes e depois dentro de casa ou de uma empresa. Cada cômodo é uma etapa e o boneco é o fio que liga todas.",
+  "referencia_de_metodo": "Campanha \"Airbnb It\" (BUCK, direção criativa de Ege Soyuer): https://www.ege.work/airbnb-houseboat"
+}

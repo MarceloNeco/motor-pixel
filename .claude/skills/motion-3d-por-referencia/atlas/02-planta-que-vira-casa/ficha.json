@@ -1,0 +1,16 @@
+{
+  "numero": 2,
+  "nome": "Planta que vira casa",
+  "estilo": "Planta técnica",
+  "tipo": "Explicativo",
+  "aprovado_em": "2026-11-16",
+  "video": "planta-que-vira-casa.mp4",
+  "poster": "poster.jpg",
+  "duracao_s": 15,
+  "formato": "1920×1080, 24 quadros por segundo, sem áudio",
+  "motor": "three.js (cena 100% em código) + Chrome sem janela + ffmpeg",
+  "descricao": "Uma folha de desenho técnico em papel claro, com malha de construção, vincos de dobra, moldura e carimbo. A planta baixa se desenha sozinha em traço azul de duas espessuras, com cotas e três notas numeradas. A câmera inclina, a planta sobe como aramado, com as arestas ocultas tracejadas, e a casa é construída em cima da própria planta.",
+  "mostrado_aqui": "A construção de uma casa térrea de 48 m² em três etapas: fundação em radier, paredes de alvenaria e telhado de duas águas.",
+  "bom_para": "Planos, montagens e \"como é feito\": primeiro o desenho plano, depois a mesma coisa como objeto, construída por etapas, com medidas e duas ou três notas numeradas presas às partes de que falam. Serve para um produto, um espaço, um sistema ou um processo que tenha ordem de montagem.",
+  "referencia_de_metodo": "Estilo Blueprint Build do 3D Style Atlas da Futurepedia (https://www.futurepedia.io/resources/3d-style-atlas/view) para o visual; campanha \"Airbnb It\" (BUCK, direção criativa de Ege Soyuer, https://www.ege.work/airbnb-houseboat) para a montagem por peças."
+}

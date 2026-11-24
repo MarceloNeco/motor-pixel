@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>bitcoin-moedas</title>
+<style>
+  @font-face { font-family: 'Inter'; src: url('./fontes/Inter-var.woff2') format('woff2'); font-weight: 100 900; }
+  @font-face { font-family: 'DM Serif Display'; src: url('./fontes/DMSerifDisplay-Regular.ttf') format('truetype'); font-weight: 400; }
+  @font-face { font-family: 'JetBrains Mono'; src: url('./fontes/JetBrainsMono-400.woff2') format('woff2'); font-weight: 400; }
+  @font-face { font-family: 'JetBrains Mono'; src: url('./fontes/JetBrainsMono-700.woff2') format('woff2'); font-weight: 700; }
+  :root { --tinta: #f2ecdf; --acento: #f58a1f; }
+  html, body { margin: 0; background: #111; overflow: hidden; }
+  #palco { position: relative; width: 1920px; height: 1080px; overflow: hidden; }
+  canvas { position: absolute; inset: 0; display: block; width: 1920px; height: 1080px; }
+  .bloco { position: absolute; left: 104px; top: 96px; color: var(--tinta); will-change: opacity, transform; }
+  .traco { width: 46px; height: 3px; background: var(--tinta); margin-bottom: 22px; }
+  .rotulo { font: 400 21px/1 'JetBrains Mono', monospace; letter-spacing: 0.24em; text-transform: uppercase; margin-bottom: 18px; }
+  .titulo { font: 400 70px/1.02 'DM Serif Display', serif; letter-spacing: -0.015em; }
+  .titulo .acento { color: var(--acento); }
+  #nota { position: absolute; left: 104px; top: 340px; font: 400 18px/1.4 'JetBrains Mono', monospace; color: var(--tinta); opacity: 0; letter-spacing: 0.02em; }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "/node_modules/three/build/three.module.js",
+  "three/addons/": "/node_modules/three/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<div id="palco">
+  <div class="bloco" id="abertura">
+    <div class="traco"></div>
+    <div class="rotulo">Bitcoin · fechamento anual em US$</div>
+    <div class="titulo">Cada moeda,<br>dois mil dólares.</div>
+  </div>
+  <div class="bloco" id="conclusao" style="opacity:0">
+    <div class="traco"></div>
+    <div class="rotulo">Bitcoin · fechamento anual em US$</div>
+    <div class="titulo">De 2022 até hoje,<br><span class="acento">quase quadruplicou.</span></div>
+  </div>
+  <div id="nota">Fechamento em 31/12 (Coinbase, BTC-USD). 2026: cotação de 16/11.</div>
+</div>
+<script type="module" src="./main.js"></script>
+</body>
+</html>

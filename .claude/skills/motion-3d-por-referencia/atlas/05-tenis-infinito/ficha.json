@@ -1,0 +1,16 @@
+{
+  "numero": 5,
+  "nome": "Tênis infinito",
+  "estilo": "Laço infinito (o mundo cabe no objeto)",
+  "tipo": "Laço",
+  "aprovado_em": "2026-11-16",
+  "video": "tenis-infinito.mp4",
+  "poster": "poster.jpg",
+  "duracao_s": 8,
+  "formato": "1920×1080, 30 quadros por segundo, sem áudio, em laço",
+  "motor": "three.js (cena 100% em código) + Chrome sem janela + ffmpeg",
+  "descricao": "Um plano único que nunca termina: a câmera sai de dentro de um objeto aberto, encontra um mundo em miniatura, vai até o mesmo objeto em tamanho pequeno dentro desse mundo, ele se abre e dentro dele mora outro mundo igual. O último quadro é o primeiro, 103 vezes menor. Miniatura fotografada de perto: pouco foco, horizonte inclinado, desfoque de movimento, brilho no que é branco e as luzes do mundo apagando antes de o objeto abrir.",
+  "mostrado_aqui": "Uma bola de tênis de feltro verde-limão aberta ao meio, com uma quadra azul à noite dentro: rede, alambrado branco, postes de luz, cadeira de juiz e dois jogadores. A bola do jogo flutua sobre a rede, a câmera dá 110° em volta dela, as luzes da quadra apagam e a bola abre com outra quadra dentro. Sem texto em tela.",
+  "bom_para": "Aberturas e vinhetas que repetem sem emenda, fundo de palco ou de live, e qualquer ideia de \"um mundo dentro de outro\": o produto que contém o próprio universo, a rotina que recomeça, o detalhe que vira o todo. Funciona quando o objeto é reconhecível de longe e tem um corte natural (tampa, casca, capa, caixa).",
+  "referencia_de_metodo": "\"The infinite world of tennis\", de Lagom CGI: https://br.pinterest.com/pin/1113515076614544584/"
+}

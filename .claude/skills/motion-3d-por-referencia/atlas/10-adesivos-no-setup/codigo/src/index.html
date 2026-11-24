@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>adesivos-no-setup</title>
+<style>
+  @font-face { font-family: 'Archivo'; src: url('./fontes/archivo-latin-wdth-normal.woff2') format('woff2'); font-weight: 100 900; font-stretch: 62% 125%; font-style: normal; }
+  @font-face { font-family: 'Archivo'; src: url('./fontes/archivo-latin-wdth-italic.woff2') format('woff2'); font-weight: 100 900; font-stretch: 62% 125%; font-style: italic; }
+  @font-face { font-family: 'Anton'; src: url('./fontes/anton-latin-400-normal.woff2') format('woff2'); font-weight: 400; }
+  @font-face { font-family: 'Titan One'; src: url('./fontes/titan-one-latin-400-normal.woff2') format('woff2'); font-weight: 400; }
+  @font-face { font-family: 'Shrikhand'; src: url('./fontes/shrikhand-latin-400-normal.woff2') format('woff2'); font-weight: 400; }
+  html, body { margin: 0; background: #111; overflow: hidden; }
+  #palco { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #1456ab; }
+  canvas { position: absolute; inset: 0; display: block; width: 1920px; height: 1080px; }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "/node_modules/three/build/three.module.js",
+  "three/addons/": "/node_modules/three/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<div id="palco"></div>
+<script type="module" src="./main.js"></script>
+</body>
+</html>

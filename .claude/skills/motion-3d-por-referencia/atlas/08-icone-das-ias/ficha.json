@@ -1,0 +1,16 @@
+{
+  "numero": 8,
+  "nome": "O ícone das IAs",
+  "estilo": "Ícone herói",
+  "tipo": "Título",
+  "aprovado_em": "2026-11-16",
+  "video": "icone-das-ias.mp4",
+  "poster": "poster.jpg",
+  "duracao_s": 13.25,
+  "formato": "1920×1080, 30 quadros por segundo, sem áudio",
+  "motor": "three.js (cena em código; as logos vêm de arquivos SVG) + Chrome sem janela + ffmpeg",
+  "descricao": "Um único ícone de app, gordo como um brinquedo, flutua num estúdio de uma cor só. A cada virada ele mostra outra logo em relevo, que chega aberta em peças e fecha com um gesto próprio da forma dela, e o estúdio inteiro troca de cor numa onda que sai de trás do ícone. Plástico com verniz, branco fosco, uma cinta de metal na cintura e uma sombra grande e macia na parede. Na última virada o ícone dá uma volta a mais, a câmera recua e o nome sai da parede em letras em relevo.",
+  "mostrado_aqui": "Seis IAs, uma por face, com a logo oficial de cada uma: Codex, ChatGPT, Gemini, Groq, DeepSeek e, por último, Claude Code. Na tela, só o letreiro final: \"Claude Code\".",
+  "bom_para": "Abertura ou título em que várias opções, ferramentas ou etapas desfilam e uma delas fica: comparativos (\"qual usar\"), listas de ferramentas, os recursos de um produto, os passos de um método. De 3 a 6 faces. Cada face precisa de um símbolo que se reconheça sozinho e de uma cor própria; a última leva o nome escrito ao lado.",
+  "referencia_de_metodo": "Estilo #35 \"Hero Icon\" do 3D Style Atlas (Futurepedia): https://www.futurepedia.io/resources/3d-style-atlas/view"
+}

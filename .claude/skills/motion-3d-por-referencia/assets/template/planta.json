@@ -1,0 +1,20 @@
+{
+  "filme": "__NOME__",
+  "modo": "fidelidade",
+  "referencia": "pericia/quadros/chave-01.jpg",
+  "mecanismo": "TROCAR: o motor do filme em uma frase.",
+  "acabamento": "TROCAR: o que faz o nível da referência, em 3 a 5 frases (materiais, brilho, luz, foco, cores).",
+  "escala": "TROCAR: 1 unidade = quanto; tamanho do herói.",
+  "pecas": [
+    {
+      "nome": "heroi",
+      "frente": "heroi",
+      "o_que_e": "TROCAR: o que é a peça.",
+      "tamanho": [2.0, 1.6, 1.1],
+      "caixa_na_ref": [0, 0, 0, 0],
+      "material": "TROCAR: fosco, acetinado, vinil com verniz, metal polido...",
+      "nao_pode_faltar": "TROCAR: os sinais que fazem ler de primeira como o objeto certo.",
+      "movimento": "TROCAR ou apagar: o que a peça precisa animar em pose(estado)."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "numero": 14,
+  "nome": "Como nasce uma moto",
+  "estilo": "Desenho a lápis",
+  "tipo": "Explicativo",
+  "aprovado_em": "2026-11-16",
+  "video": "como-nasce-uma-moto.mp4",
+  "poster": "poster.jpg",
+  "duracao_s": 8,
+  "formato": "1920×1080, 30 quadros por segundo, sem áudio",
+  "motor": "three.js (cena 100% em código) + Chrome sem janela + ffmpeg",
+  "descricao": "Uma cena 3D de verdade que se lê como desenho a grafite no caderno de um designer. O objeto se desenha sozinho, na ordem em que é montado: linhas de construção, contorno, hachura reta que só aparece onde a luz não chega e sombra hachurada no chão. Cada etapa ganha uma nota numerada em letra de arquiteto, com círculo vermelho e linha-guia que acompanha a peça enquanto a câmera faz um arco lento. Papel com dente, mancha de mão e marca de borracha; um vermelho só, que pinta uma única peça.",
+  "mostrado_aqui": "Uma moto montada em quatro etapas, na ordem em que um designer a esboça: rodas, quadro, motor e tanque. Na tela: \"COMO NASCE UMA MOTO\", as notas \"1 RODAS\", \"2 QUADRO\", \"3 MOTOR\", \"4 TANQUE\" e a cota do entre-eixos, \"1400 MM\". O tanque é a peça que recebe o vermelho; o último risco é o farol acendendo.",
+  "bom_para": "Mostrar como algo é feito ou montado, passo a passo, em três a cinco etapas: um produto, um móvel, uma máquina, um prato, um espaço. Também serve para a anatomia de um objeto (as partes e os nomes delas) e para qualquer explicação que ganhe com cara de rascunho de quem projeta, e não de render pronto.",
+  "referencia_de_metodo": "Estilo #25 \"Pencil Sketch\" do 3D Style Atlas (Futurepedia): https://www.futurepedia.io/resources/3d-style-atlas/view"
+}

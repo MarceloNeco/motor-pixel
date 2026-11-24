@@ -1,0 +1,16 @@
+{
+  "numero": 18,
+  "nome": "Fone explodido",
+  "estilo": "Vista explodida com rótulos numerados",
+  "tipo": "Explicação",
+  "aprovado_em": "2026-11-17",
+  "video": "fone-explodido.mp4",
+  "poster": "poster.jpg",
+  "duracao_s": 10,
+  "formato": "1920×1080, 30 quadros por segundo, com áudio sintetizado em código",
+  "motor": "three.js (cena 100% em código; os rótulos usam a Avenir Next do sistema) + Chrome sem janela + ffmpeg",
+  "descricao": "Um filme de desmontagem de produto: um fone de ouvido flutua sobre um fundo pêssego sem horizonte, se abre ao longo do eixo das conchas em fileira, o arco sobe, e cada peça ganha uma chamada numerada com nome e uma linha de descrição. Depois o fone se remonta com os rótulos acompanhando e fecha com uma frase e ondas de som saindo das conchas. Fone verde-petróleo com metal rosé, almofadas creme e um único acento coral.",
+  "mostrado_aqui": "O que tem dentro de um fone de ouvido: almofada, tela, driver, bateria, placa, concha e arco. Na tela: o título \"O QUE TEM DENTRO / DE UM FONE DE OUVIDO\", os sete rótulos numerados com uma linha de descrição cada e a frase final \"SETE PEÇAS / UM SOM\". As especificações (30 horas, 40 mm, alumínio anodizado) são ilustrativas. O áudio é sintetizado: um sopro na abertura, sete notas subindo nos rótulos, os encaixes, o clique e um grave no final.",
+  "bom_para": "Mostrar como algo é construído ou o que tem dentro: qualquer objeto, produto, oferta ou método feito de partes. Cada parte é um item nomeado, a ordem da fileira é a ordem de montagem, e remontar mostra onde cada coisa vai. Funciona também como metáfora: \"as sete partes de uma proposta\", \"o que tem dentro de um agente\".",
+  "referencia_de_metodo": "Estilo #08 \"Exploded View\" do 3D Style Atlas da Futurepedia: https://www.futurepedia.io/resources/3d-style-atlas/view (só a estrutura do estilo entra aqui; o objeto, a paleta, os textos e o código são outros)"
+}

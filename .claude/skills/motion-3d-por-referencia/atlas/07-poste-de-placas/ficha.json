@@ -1,0 +1,16 @@
+{
+  "numero": 7,
+  "nome": "Poste de placas",
+  "estilo": "Totem em câmera chicote",
+  "tipo": "Vinheta de marca",
+  "aprovado_em": "2026-11-16",
+  "video": "poste-de-placas.mp4",
+  "poster": "poster.jpg",
+  "duracao_s": 15,
+  "formato": "1920×1080, 30 quadros por segundo, sem áudio",
+  "motor": "three.js (cena 100% em código) + Chrome sem janela + ffmpeg",
+  "descricao": "Um poste de rua atulhado de placas e adesivos fica parado no escuro, com uma névoa vermelha atrás, e uma câmera grande-angular chicoteia em volta dele num plano só. Cada chicote termina colado numa placa diferente: a luminosa laranja, o semáforo que abre, o PARE, a placa preta da marca. Luz de flash, lente com distorção de barril, desfoque de movimento forte nos giros e chão preto polido. No fim a câmera recua e mostra o totem inteiro.",
+  "mostrado_aqui": "Uma esquina brasileira inventada. Na tela: \"a esquina\" nas placas luminosas, \"aiverso\" na placa preta, \"Pare\", \"Opa!\", \"EM OBRAS\", \"MÃO ÚNICA\", \"RUA DO PROMPT\", \"devagar\" e \"vai\" na luz verde do semáforo.",
+  "bom_para": "Vinheta de marca, abertura de vídeo e chamada de lançamento: qualquer peça em que um nome e meia dúzia de palavras curtas precisem aparecer com energia, sem narração. Funciona quando a marca cabe num objeto de rua (placa, letreiro, adesivo) e quando existe uma palavra para acender no momento calmo do filme.",
+  "referencia_de_metodo": "\"Motion inspiration - House\", publicado por MotionDesigners.Pro no Pinterest: https://br.pinterest.com/pin/127578601939192693/"
+}
