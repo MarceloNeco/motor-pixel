@@ -13,3 +13,6 @@
   na gaveta `motor-pixel-<versão>`, para todos os apps do endereço; `offline.guardarNoAparelho` + `1.0/sw-motor.js`.
 - Testes: `node --test teste/*.test.js` (Playwright com o Chromium do ambiente). Antes de publicar: prints dos exemplos em 360 px e
   1920 px (`node ferramentas/prints.js`, saem em `docs/prints/`).
+- **Skill `threejs`** (`.claude/skills/threejs/`, dono 24/Nov/2026): as instruções oficiais do Three.js para IAs (`llms.txt` e
+  `llms-full.txt` do github.com/mrdoob/three.js, MIT) adaptadas às regras daqui (sem CDN, r187 local, WebGL por padrão).
+  Mexeu em 3D? Use a skill. Trocou a versão do Three.js? Atualize a `referencia/` dela junto.
